@@ -1,9 +1,6 @@
 import tkinter as tk
 import os
 
-# consts
-SAVED_NOTES_DIR = "notes"
-
 # window setup
 root = tk.Tk()
 root.state("zoomed")
@@ -34,14 +31,15 @@ def get_file_name():
 
 def save():
     text_content = text_box.get("1.0", tk.END)
+    saved_notes_dir = "notes"
 
     # check that saves folder exists
-    if not os.path.exists(SAVED_NOTES_DIR):
-        os.makedirs(SAVED_NOTES_DIR)
+    if not os.path.exists(saved_notes_dir):
+        os.makedirs(saved_notes_dir)
 
     # file path
     file_name = get_file_name()
-    file_path = os.path.join(SAVED_NOTES_DIR, file_name)
+    file_path = os.path.join(saved_notes_dir, file_name)
 
     # check if file of the same name exists
     if os.path.exists(file_path):
