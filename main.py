@@ -55,7 +55,7 @@ save_button = tk.Button(frm, text="Save", command=save)
 save_button.pack()
 
 # text box setup
-text_box = tk.Text(frm, font=("Arial", 12, "anti"))
+text_box = tk.Text(frm, font=("Arial", 12))
 text_box.pack(fill=tk.BOTH, expand=True)
 
 root.mainloop()
