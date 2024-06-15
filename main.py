@@ -39,13 +39,14 @@ def save():
     if not os.path.exists(SAVED_NOTES_DIR):
         os.makedirs(SAVED_NOTES_DIR)
 
-    # file naming
+    # file path
     file_name = get_file_name()
+    file_path = os.path.join(SAVED_NOTES_DIR, file_name)
+
     # check if file of the same name exists
-    if os.path.exists(file_name):
+    if os.path.exists(file_path):
         raise Exception("There is already a file with that name")
     else:
-        file_path = os.path.join(SAVED_NOTES_DIR, file_name)
         with open(file_path, "w") as file:
             file.write(text_content)
             print("Text saved to ", file_path)
